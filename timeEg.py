@@ -1,0 +1,8 @@
+sec = int(input("enter time in seconds.."))
+hour = int(sec / 3600)
+sec = sec - (hour * 3600)
+min = int(sec / 60)
+sec = sec - (min * 60)
+print("entered time in required format")
+text = "{} hours {}minutes {} seconds".format(hour, min, sec)
+print(text)
