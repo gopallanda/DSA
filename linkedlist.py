@@ -48,11 +48,13 @@ class LinkedList:
             return
         new_node.next = temp.next
         temp.next = new_node
+
     def deleteNodeBegin(self):
         if self.head is None:
             print("List is empty")
             return
         self.head = self.head.next
+
     def deleteNodeEnd(self):
         if self.head is None:
             print("List is empty")
@@ -64,6 +66,7 @@ class LinkedList:
         while temp.next.next:
             temp = temp.next
         temp.next = None
+
     def deleteNodePosition(self, pos):
         if self.head is None:
             print("List is empty")
@@ -81,6 +84,7 @@ class LinkedList:
             print("Position out of range")
             return
         temp.next = temp.next.next
+
     def deleteNodeValue(self, value):
         if self.head is None:
             print("List is empty")
@@ -96,20 +100,35 @@ class LinkedList:
             return
         temp.next = temp.next.next
 
+    def reverseList(self):
+        uc = None
+        pr = None
+        while self.head:
+            uc = self.head.next
+            self.head.next = pr
+            pr = self.head
+            self.head = uc
+        self.head = pr
+
+
 if __name__ == "__main__":
     ll = LinkedList()
     ll.addEnd(1)
     ll.addEnd(2)
     ll.addEnd(3)
-    ll.Traverse()  # Output: 1 -> 2 -> 3
+    ll.Traverse()
     ll.addBegin(9)
     ll.addPosition(8, 1)
-    ll.Traverse()  # Output: 9 -> 1 -> 8 -> 2 -> 3
+    ll.Traverse()
+    ll.reverseList()
+    ll.Traverse()
+    ll.reverseList()
+    ll.Traverse()
     ll.deleteNodeBegin()
-    ll.Traverse()  # Output: 1 -> 8 -> 2 ->
+    ll.Traverse()
     ll.deleteNodeEnd()
-    ll.Traverse()  # Output: 1 -> 8 -> 2
-    ll.deleteNodePosition(1)  
-    ll.Traverse()  # Output: 1 -> 2
+    ll.Traverse()
+    ll.deleteNodePosition(1)
+    ll.Traverse()
     ll.deleteNodeValue(2)
-    ll.Traverse()  # Output: 2
+    ll.Traverse()
