@@ -9,7 +9,7 @@ def longestRepeatingCharacter(s, k):
         while (r - left + 1) - max_freq > k:
             count[s[left]] -= 1
             left += 1
-        result = max(result, r - left + 1)
+        result = max(result, r - left + 1) 
     return result
 
 
