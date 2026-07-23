@@ -60,11 +60,29 @@ def ticketCounterOp(n,k):
         return right 
     else:
         return left 
-    
+# even more easier code but TC is 0(n)
+
+def counter(n,k):
+  q=deque([i+1 for i in range(n)])
+  print(q)
+  if n==1:
+        return q[0]
+  while True:
+    for _ in range(k):
+        q.popleft()
+        if len(q)==1:
+            return q[0]
+    for _ in range(k):
+        q.pop()
+        if len(q)==1:
+            return q[0]
+
 if __name__=="__main__":
     n=int(input("enter n:"))
     k=int(input("enter k:"))
     res=ticketCounter(n,k)
     opres=ticketCounterOp(n,k)
+    easyres=counter(n,k)
     print(res)
     print(opres)
+    print(easyres)
