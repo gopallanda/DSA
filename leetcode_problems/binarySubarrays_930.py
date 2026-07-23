@@ -16,4 +16,4 @@ def binarySubArrays(nums,goal):
 if __name__=='__main__':
     nums=[1,0,1,0,1]
     goal=2
-    print(binarySubArrays(nums,goal))  # Output: 4
+    print(binarySubArrays(nums,goal))  # Output: 4 

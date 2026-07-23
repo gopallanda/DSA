@@ -50,3 +50,26 @@ def reverseList(head):
         head=uc
     head=pr 
     return head 
+
+def reorderList(head):
+    if not head or not head.next:
+        return
+    slow=fast=head
+    while fast and fast.next:
+        slow=slow.next
+        fast=fast.next.next
+    uc=pr=None
+    while slow:
+        uc=slow.next 
+        slow.next=pr 
+        pr=slow 
+        slow=uc 
+    slow=pr
+    first,second=head,slow
+    while second.next:
+        ptr1,ptr2=first.next,second.next
+        first.next=second
+        second.next=ptr1
+        first=ptr1
+        second=ptr2
+    

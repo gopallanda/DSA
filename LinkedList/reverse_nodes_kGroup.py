@@ -27,5 +27,5 @@ def reverseInKGroup(head,k):
         curr.next=nxt
         pre=curr
         curr=nxt
-    return dummy.next
+    return dummy.next 
         
